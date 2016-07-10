@@ -12,6 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.util.Vector;
  
 public class Menu implements Listener {
@@ -60,6 +61,7 @@ public class Menu implements Listener {
 	        	
 	        	Villager newGuy = (Villager)player.getWorld().spawnEntity(loc, EntityType.VILLAGER);
 	        	newGuy.setCustomName("Big Willy");
+	        	newGuy.setMetadata("NoAI", new FixedMetadataValue(null,1));
 	        }
         }
     }
