@@ -45,7 +45,7 @@ public class Menu implements Listener {
 	        	Boolean LastBlockGround = false;
 	        	
 	        	player.sendMessage("Finding Your spot...");
-	        	while (b == Material.AIR && LastBlockGround == true) {
+	        	while (!(b == Material.AIR && LastBlockGround == true)) {
 	        		b = player.getWorld().getBlockAt(loc).getType();
 	        		if (b != Material.AIR) {
 	        			loc.setY(loc.getY()+1);
