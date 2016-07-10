@@ -38,7 +38,7 @@ public class Menu implements Listener {
 	        if (clicked.getType() == Material.GOLD_BLOCK) {
 	        	Location loc = player.getLocation();
 	        	Vector dir = loc.getDirection();
-	        	dir.multiply(3);
+	        	dir.multiply(5);
 	        	loc.add(dir);
 	        	
 	        	Double i = loc.getY();
