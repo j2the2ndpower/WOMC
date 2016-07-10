@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -55,7 +57,7 @@ public class Menu implements Listener {
 	        		b = player.getWorld().getBlockAt(loc).getType();
 	        	}
 	        	
-	        	player.teleport(loc);
+	        	player.getWorld().spawnEntity(loc, EntityType.GIANT);
 	        }
         }
     }
