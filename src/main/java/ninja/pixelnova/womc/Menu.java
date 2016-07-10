@@ -1,6 +1,7 @@
 package ninja.pixelnova.womc;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -25,8 +26,11 @@ public class Menu implements Listener {
 	        if (clicked.getType() == Material.DIAMOND) {
 		        event.setCancelled(true);
 		        player.closeInventory();
-		        player.setHealth(0);
 		        player.getInventory().addItem(new ItemStack(Material.COAL, 1));
+		        player.sendMessage("YOU HAVE BEEN A BAD BOY!!!");
+		        Location loc = player.getLocation();
+		        loc.add(0, 100, 0);
+		        player.teleport(loc);
 	        }
         }
     }
