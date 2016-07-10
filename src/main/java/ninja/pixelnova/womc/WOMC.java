@@ -2,10 +2,14 @@ package ninja.pixelnova.womc;
 
 import java.util.logging.Level;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class WOMC extends JavaPlugin {
@@ -36,6 +40,14 @@ public class WOMC extends JavaPlugin {
     		// doSomething, I SAID DO SOMETHING
     		sender.sendMessage("You pressed the basic button.  Prepare for spam.");
     		getLogger().log(Level.INFO, "Player " + sender.getName() + " typed BASIC, EVERYONE BE SURE TO SPAM THEM!");
+    		
+            // Get the player who should be set on fire. Remember that indecies start with 0, not 1.
+            @SuppressWarnings("deprecation")
+			Player target = Bukkit.getServer().getPlayer(sender.getName());
+
+            Inventory menuInventory = Bukkit.createInventory(null, InventoryType.CHEST, "Menu of Destiny");
+            target.openInventory(menuInventory);
+            
     		return true;
     	} //If this has happened the function will return true. 
     	
