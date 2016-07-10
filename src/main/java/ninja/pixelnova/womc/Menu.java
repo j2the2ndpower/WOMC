@@ -56,7 +56,7 @@ public class Menu implements Listener {
 	        		b = player.getWorld().getBlockAt(loc).getType();
 	        	}
 	        	
-	        	player.getWorld().spawnEntity(loc, EntityType.PLAYER);
+	        	player.getWorld().spawnEntity(loc, EntityType.GIANT);
 	        	//newGuy.setDisplayName("Big Willy");
 	        }
         }
