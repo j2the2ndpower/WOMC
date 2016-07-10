@@ -34,10 +34,11 @@ public class WOMC extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
     	if (cmd.getName().equalsIgnoreCase("basic")) { // If the player typed /basic then do the following...
     		// doSomething
+    		sender.sendMessage("You pressed the basic button.  Prepare for spam.");
     		getLogger().log(Level.INFO, "Player " + sender.getName() + " typed BASIC, EVERYONE SPAM THEM!");
     		return true;
     	} //If this has happened the function will return true. 
-            // If this hasn't happened the value of false will be returned.
+    	
     	return false; 
     }
 }
