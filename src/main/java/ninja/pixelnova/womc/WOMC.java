@@ -47,8 +47,8 @@ public class WOMC extends JavaPlugin {
             @SuppressWarnings("deprecation")
 			Player target = Bukkit.getServer().getPlayer(sender.getName());
 
-            Inventory menuInventory = Bukkit.createInventory(null, InventoryType.DROPPER, "Menu of Destiny");
-            menuInventory.setItem(1, new ItemStack(Material.DIAMOND, 1));
+            Inventory menuInventory = Bukkit.createInventory(null, 9, "Menu of Destiny");
+            menuInventory.setItem(4, new ItemStack(Material.DIAMOND, 1));
             
             target.openInventory(menuInventory);
             
