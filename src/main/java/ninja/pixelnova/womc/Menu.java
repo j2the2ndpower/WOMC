@@ -9,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.Vector;
  
 public class Menu implements Listener {
     public static Inventory myInventory = Bukkit.createInventory(null, 9, "Menu of Destiny");
@@ -32,6 +33,14 @@ public class Menu implements Listener {
 		        loc.add(0, 100, 0);
 		        player.teleport(loc);
 		        player.setFireTicks(300);
+	        }
+	        
+	        if (clicked.getType() == Material.GOLD_BLOCK) {
+	        	Location loc = player.getLocation();
+	        	Vector dir = loc.getDirection();
+	        	dir.multiply(3);
+	        	loc.add(dir);
+	        	player.teleport(loc);
 	        }
         }
     }
