@@ -27,8 +27,8 @@ public class Menu implements Listener {
         ItemStack clicked = event.getCurrentItem();
         Inventory inventory = event.getInventory();
         if (inventory.getName().equals(myInventory.getName())) {
+        	event.setCancelled(true);
 	        if (clicked.getType() == Material.DIAMOND) {
-		        event.setCancelled(true);
 		        player.closeInventory();
 		        player.getInventory().addItem(new ItemStack(Material.COAL, 1));
 		        player.sendMessage("YOU HAVE BEEN A BAD BOY!!!");
