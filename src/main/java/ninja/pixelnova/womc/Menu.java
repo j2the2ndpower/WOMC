@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Villager;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
@@ -57,8 +58,8 @@ public class Menu implements Listener {
 	        		b = player.getWorld().getBlockAt(loc).getType();
 	        	}
 	        	
-	        	Player newGuy = (Player)player.getWorld().spawnEntity(loc, EntityType.PLAYER);
-	        	newGuy.setDisplayName("Big Willy");
+	        	Villager newGuy = (Villager)player.getWorld().spawnEntity(loc, EntityType.VILLAGER);
+	        	newGuy.setCustomName("Big Willy");
 	        }
         }
     }
