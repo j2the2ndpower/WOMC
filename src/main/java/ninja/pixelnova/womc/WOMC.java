@@ -3,6 +3,7 @@ package ninja.pixelnova.womc;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -10,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class WOMC extends JavaPlugin {
@@ -45,7 +47,9 @@ public class WOMC extends JavaPlugin {
             @SuppressWarnings("deprecation")
 			Player target = Bukkit.getServer().getPlayer(sender.getName());
 
-            Inventory menuInventory = Bukkit.createInventory(null, InventoryType.CHEST, "Menu of Destiny");
+            Inventory menuInventory = Bukkit.createInventory(null, InventoryType.DROPPER, "Menu of Destiny");
+            menuInventory.setItem(1, new ItemStack(Material.DIAMOND, 1));
+            
             target.openInventory(menuInventory);
             
     		return true;
