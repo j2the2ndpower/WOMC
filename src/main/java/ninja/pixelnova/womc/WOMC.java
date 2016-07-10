@@ -15,7 +15,7 @@ public class WOMC extends JavaPlugin {
     public void onEnable() {
         // TODO Insert logic to be performed when the plugin is enabled
     	getLogger().info("WOMC ENABLED!");
-    	
+    	getServer().getPluginManager().registerEvents(new Menu(),  this);
     	/*for (Player player : Bukkit.getServer().getOnlinePlayers()) {
     	    playerList.put(player.getName(), playerData(player));
     	}*/
