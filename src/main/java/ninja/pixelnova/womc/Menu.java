@@ -26,7 +26,7 @@ public class Menu implements Listener {
 		        event.setCancelled(true);
 		        player.closeInventory();
 		        player.setHealth(0);
-		        player.getInventory().addItem(new ItemStack(Material.C, 1));
+		        player.getInventory().addItem(new ItemStack(Material.COAL, 1));
 	        }
         }
     }
