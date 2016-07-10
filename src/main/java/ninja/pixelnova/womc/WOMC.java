@@ -3,16 +3,11 @@ package ninja.pixelnova.womc;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerLoginEvent;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class WOMC extends JavaPlugin {
@@ -47,28 +42,11 @@ public class WOMC extends JavaPlugin {
             // Get the player who should be set on fire. Remember that indecies start with 0, not 1.
             @SuppressWarnings("deprecation")
 			Player target = Bukkit.getServer().getPlayer(sender.getName());
-
-            Inventory menuInventory = Bukkit.createInventory(null, 9, "Menu of Destiny");
-            menuInventory.setItem(4, new ItemStack(Material.DIAMOND, 1));
-            
-            target.openInventory(menuInventory);
+            target.openInventory(Menu.myInventory);
             
     		return true;
     	} //If this has happened the function will return true. 
     	
     	return false; 
-    }
-    
-    @EventHandler
-    public void onInventoryClick(InventoryClickEvent e) {
-    	Player player = (Player) e.getWhoClicked();
-    	ItemStack clicked = e.getCurrentItem();
-    	Inventory inventory = e.getInventory();
-    	
-    	if (inventory.getName().equals("Menu of Destiny")) {
-    		if (clicked.getType() == Material.DIAMOND) {
-    			player.setHealth(0);
-    		}
-    	}
     }
 }
