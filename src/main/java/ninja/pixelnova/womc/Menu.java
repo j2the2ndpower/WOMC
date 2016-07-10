@@ -44,16 +44,13 @@ public class Menu implements Listener {
 	        	Material b = player.getWorld().getBlockAt(loc).getType();
 	        	Boolean LastBlockGround = false;
 	        	
-	        	player.sendMessage("Finding Your spot...");
 	        	while (!(b == Material.AIR && LastBlockGround == true)) {
 	        		if (b != Material.AIR) {
 	        			loc.setY(loc.getY()+1);
 	        			LastBlockGround = true;
-	        			player.sendMessage("Going Up 1");
 	        		} else {
 	        			loc.setY(loc.getY()-1);
 	        			LastBlockGround = false;
-	        			player.sendMessage("Going Down 1");
 	        		}
 	        		b = player.getWorld().getBlockAt(loc).getType();
 	        	}
