@@ -41,7 +41,6 @@ public class Menu implements Listener {
 	        	dir.multiply(5);
 	        	loc.add(dir);
 	        	
-	        	Double i = loc.getY();
 	        	Material b = player.getWorld().getBlockAt(loc).getType();
 	        	Boolean LastBlockGround = false;
 	        	
@@ -50,9 +49,11 @@ public class Menu implements Listener {
 	        		if (b != Material.AIR) {
 	        			loc.setY(loc.getY()+1);
 	        			LastBlockGround = true;
+	        			 player.sendMessage("Going Up 1");
 	        		} else {
 	        			loc.setY(loc.getY()-1);
 	        			LastBlockGround = false;
+	        			 player.sendMessage("Going Down 1");
 	        		}
 	        	}
 	        	
