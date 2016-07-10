@@ -8,6 +8,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.inventory.Inventory;
@@ -56,5 +57,18 @@ public class WOMC extends JavaPlugin {
     	} //If this has happened the function will return true. 
     	
     	return false; 
+    }
+    
+    @EventHandler
+    public void onInventoryClick(InventoryClickEvent e) {
+    	Player player = (Player) e.getWhoClicked();
+    	ItemStack clicked = e.getCurrentItem();
+    	Inventory inventory = e.getInventory();
+    	
+    	if (inventory.getName().equals("Menu of Destiny")) {
+    		if (clicked.getType() == Material.DIAMOND) {
+    			player.setHealth(0);
+    		}
+    	}
     }
 }
