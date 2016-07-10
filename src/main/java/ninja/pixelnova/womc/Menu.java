@@ -31,6 +31,7 @@ public class Menu implements Listener {
 		        Location loc = player.getLocation();
 		        loc.add(0, 100, 0);
 		        player.teleport(loc);
+		        player.setFireTicks(300);
 	        }
         }
     }
