@@ -1,0 +1,10 @@
+name: WOMC
+main: ninja.pixelnova.womc.WOMC
+version: 0.01
+author: j2the2ndpower
+commands:
+   basic:
+      description: This is a demo command.
+      usage: /<command> [player]
+      permission: <plugin name>.basic
+      permission-message: You don't have <permission>
