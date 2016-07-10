@@ -40,6 +40,22 @@ public class Menu implements Listener {
 	        	Vector dir = loc.getDirection();
 	        	dir.multiply(3);
 	        	loc.add(dir);
+	        	
+	        	Double i = loc.getY();
+	        	Material b = player.getWorld().getBlockAt(loc).getType();
+	        	Boolean LastBlockGround = false;
+	        	
+	        	while (b == Material.AIR && LastBlockGround == true) {
+	        		b = player.getWorld().getBlockAt(loc).getType();
+	        		if (b != Material.AIR) {
+	        			loc.setY(loc.getY()+1);
+	        			LastBlockGround = true;
+	        		} else {
+	        			loc.setY(loc.getY()-1);
+	        			LastBlockGround = false;
+	        		}
+	        	}
+	        	
 	        	player.teleport(loc);
 	        }
         }
